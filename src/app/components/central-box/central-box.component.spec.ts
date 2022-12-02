@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoxCentraleComponent } from './box-centrale.component';
+import { CentralBoxComponent } from './central-box.component';
 
-describe('BoxCentraleComponent', () => {
-  let component: BoxCentraleComponent;
-  let fixture: ComponentFixture<BoxCentraleComponent>;
+describe('CentralBoxComponent', () => {
+  let component: CentralBoxComponent;
+  let fixture: ComponentFixture<CentralBoxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoxCentraleComponent ]
+      declarations: [ CentralBoxComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BoxCentraleComponent);
+    fixture = TestBed.createComponent(CentralBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

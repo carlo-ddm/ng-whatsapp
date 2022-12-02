@@ -1,0 +1,7 @@
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-image: url('src/assets/img/mine.jpeg');
+  width: calc(100% - 40%);
+}
