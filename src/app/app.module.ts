@@ -12,7 +12,7 @@ import { RightPartCentralBoxComponent } from './components/right-part-central-bo
     AppComponent,
     CentralBoxComponent,
     LeftPartCentralBoxComponent,
-    RightPartCentralBoxComponent
+    RightPartCentralBoxComponent,
   ],
   imports: [
     BrowserModule,

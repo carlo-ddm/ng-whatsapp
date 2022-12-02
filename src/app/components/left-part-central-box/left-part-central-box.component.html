@@ -1,0 +1,19 @@
+<!-- Questi div sono tutti incolonnati per fle-column del componente left -->
+<div class="user-profile d-flex justify-content-between align-items-center">
+  <div>Img</div>
+  <div>Buttons</div>
+</div>
+
+<div class="notifications">
+  notifications
+</div>
+
+<div class="search-start-new-chat">
+  search | start new chats
+</div>
+
+<div class="profiles d-flex flex-column">
+  <div class="profile d-flex align-items-center" *ngFor="let profile of data">
+    <p>{{profile.name}}</p>
+  </div>
+</div>
