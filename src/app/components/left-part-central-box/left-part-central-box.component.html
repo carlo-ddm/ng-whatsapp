@@ -14,6 +14,7 @@
 
 <div class="profiles d-flex flex-column">
   <div class="profile d-flex align-items-center" *ngFor="let profile of data">
+    <img [src]="'../../../assets/img/avatar' + profile.avatar + '.jpeg'">
     <p>{{profile.name}}</p>
   </div>
 </div>
