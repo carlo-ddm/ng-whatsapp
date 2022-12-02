@@ -1,0 +1,11 @@
+.cd-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom,
+  #009688 0px,
+  #009688 15vh,
+  #dddbd1 15vh,
+  #dddbd1 100%);
+  height: 100vh;
+}
