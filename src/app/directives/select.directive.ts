@@ -16,11 +16,8 @@ export class SelectDirective {
 
 
   colorAtSelection(background:string){
-    if (this.appSelect) {
-      this.element.nativeElement.style.backgroundColor = background
-      console.log('INDICE SELEZIONATO?',this.appSelect);
-    }
-
+    this.element.nativeElement.style.backgroundColor = background
+    console.log('INDICE SELEZIONATO?',this.appSelect);
   }
 
 }

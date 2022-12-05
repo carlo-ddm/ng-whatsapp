@@ -37,7 +37,7 @@ export class LeftPartCentralBoxComponent implements OnInit, OnChanges {
   }
 
   changeIndex(index:number){
-    console.log(index);
-
+    // Funziona anche solo con c-log
+    this.index = index
   }
 }
