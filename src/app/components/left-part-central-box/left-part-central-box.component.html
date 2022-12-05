@@ -1,20 +1,45 @@
-<!-- Questi div sono tutti incolonnati per fle-column del componente left -->
+<!-- Questi div sono tutti incolonnati per flex-column del componente left -->
 <div class="user-profile d-flex justify-content-between align-items-center">
-  <div>Img</div>
-  <div>Buttons</div>
+  <div class="d-flex align-items-center">
+    <img [src]="'../../../assets/img/avatar' + user.avatar + '.jpeg'" [alt]="user.name">
+    <span class="">{{user.name}}</span>
+  </div>
+  <div class="icons-container d-flex justify-content-between">
+    <i class="fa-solid fa-circle-notch"></i>
+    <i class="fa-solid fa-message"></i>
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </div>
 </div>
 
-<div class="notifications">
-  notifications
+<div class="notifications d-flex align-items-center">
+  <!-- Bell-container -->
+  <div class="bell-container d-flex justify-content-center align-items-center">
+    <i class="fa-solid fa-bell-slash"></i>
+  </div>
+  <div class="on-off-notifications d-flex flex-column">
+    <a>Ricevi notifiche di nuovi messaggi</a>
+    <span>Attiva notifiche desktop</span>
+  </div>
 </div>
 
 <div class="search-start-new-chat">
-  search | start new chats
+  <input type="text" placeholder="Cerca o inizia una nuova chat">
 </div>
 
 <div class="profiles d-flex flex-column">
-  <div class="profile d-flex align-items-center" *ngFor="let profile of data">
-    <img [src]="'../../../assets/img/avatar' + profile.avatar + '.jpeg'">
-    <p>{{profile.name}}</p>
+  <div [appSelect]="i" (click)="changeIndex(i)" class="profile d-flex justify-content-between align-items-center" *ngFor="let profile of data, index as i">
+    <div class="d-flex align-items-center">
+      <img [src]="'../../../assets/img/avatar' + profile.avatar + '.jpeg'">
+      <!-- Container -> Nome + Ultimo messaggio ricevuto -->
+      <div class="d-flex flex-column">
+        <span>{{profile.name}}</span>
+        <span class="last-received">Ultimo messaggio ricevuto</span>
+      </div>
+    </div>
+
+    <div class="hour-last-msg-received">
+      <span>{{getHours(profile.messages)}}</span>
+    </div>
+
   </div>
 </div>

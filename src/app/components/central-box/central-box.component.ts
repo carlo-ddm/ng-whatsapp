@@ -16,6 +16,6 @@ export class CentralBoxComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.data);
+    // console.log(this.data);
   }
 }

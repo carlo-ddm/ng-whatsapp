@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CentralBoxComponent } from "./components/central-box/central-box.component";
 import { LeftPartCentralBoxComponent } from './components/left-part-central-box/left-part-central-box.component';
 import { RightPartCentralBoxComponent } from './components/right-part-central-box/right-part-central-box.component';
+import { SelectDirective } from './directives/select.directive';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { RightPartCentralBoxComponent } from './components/right-part-central-bo
     CentralBoxComponent,
     LeftPartCentralBoxComponent,
     RightPartCentralBoxComponent,
+    SelectDirective
   ],
   imports: [
     BrowserModule,
