@@ -17,7 +17,6 @@ export class SelectDirective {
 
 
   colorAtSelection(background:string){
-    console.log('INDICE: ',this.appSelect);
     this.element.nativeElement.style.backgroundColor = background;
   }
 

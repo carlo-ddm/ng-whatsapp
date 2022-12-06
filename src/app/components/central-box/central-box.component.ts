@@ -1,5 +1,5 @@
 // import { getLocaleDateFormat } from '@angular/common';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Profile } from 'src/app/interface/profile.interface';
 
 @Component({
@@ -7,20 +7,12 @@ import { Profile } from 'src/app/interface/profile.interface';
   templateUrl: './central-box.component.html',
   styleUrls: ['./central-box.component.scss']
 })
-export class CentralBoxComponent implements OnInit, OnChanges {
+export class CentralBoxComponent{
 
   @Input() data: Profile [] = [];
-
-
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // console.log(this.data);
-  }
+  selectedProfile!:Profile;
 
   getData(value:number){
-    console.log('Valore -->',value);
+    this.selectedProfile = this.data[value];
   }
 }

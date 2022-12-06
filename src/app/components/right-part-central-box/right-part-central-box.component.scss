@@ -4,6 +4,16 @@
   height: 70px;
   // border-bottom: 1px solid black;
   background-color: #E5E5E5;
+  img {
+    width: 50px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+  .last-received, .hour-last-msg-received {
+    height: 100%;
+    font-size: 10px;
+    color: #b1b1b1;
+  }
   .icons-container {
     display: flex;
     justify-content: space-between;
