@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Message, Profile } from 'src/app/interface/profile.interface';
 
 @Component({
@@ -9,6 +9,8 @@ import { Message, Profile } from 'src/app/interface/profile.interface';
 export class LeftPartCentralBoxComponent implements OnInit, OnChanges {
 
   @Input() data: Profile [] = []
+
+  @Output() emitSelectedProfile = new EventEmitter<number>()
 
   // Istanzio variabile User
   user =  {
@@ -52,6 +54,11 @@ export class LeftPartCentralBoxComponent implements OnInit, OnChanges {
       }
   });
   console.log(this.search);
+  }
+
+  emitProfile(index:number){
+    this.emitSelectedProfile.emit(index)
+    console.log(index);
   }
 
 }

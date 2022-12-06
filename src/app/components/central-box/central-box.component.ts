@@ -1,3 +1,4 @@
+// import { getLocaleDateFormat } from '@angular/common';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Profile } from 'src/app/interface/profile.interface';
 
@@ -17,5 +18,9 @@ export class CentralBoxComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(this.data);
+  }
+
+  getData(value:number){
+    console.log('Valore -->',value);
   }
 }

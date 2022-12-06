@@ -30,7 +30,7 @@
 
 <div class="profiles d-flex flex-column" >
 
-  <div  *ngFor="let profile of data, index as i">
+  <div (click)="emitProfile(i)" *ngFor="let profile of data, index as i">
 
     <div [appSelect]="i" class="profile d-flex justify-content-between align-items-center" *ngIf="profile.visible">
 
