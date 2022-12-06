@@ -23,6 +23,10 @@
       color: #b1b1b1;
       cursor: pointer;
     }
+
+    i:hover {
+      color: gray;
+    }
   }
 }
 
@@ -45,6 +49,10 @@
     i {
       color: #b1b1b1;
       cursor: pointer;
+    }
+
+    i:hover {
+      color: gray;
     }
   }
   input {
