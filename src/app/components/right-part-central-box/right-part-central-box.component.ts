@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Profile } from 'src/app/interface/profile.interface';
+import { Message, Profile } from 'src/app/interface/profile.interface';
 
 @Component({
   selector: 'app-right-part-central-box',
@@ -17,6 +17,17 @@ export class RightPartCentralBoxComponent implements OnChanges{
     // console.log('DATA: ', this.data);
 
     // console.log('INTERLOCUTOR: ', this.interlocutor);
+  }
+
+  getHours(messages: Message[]): string{
+    let messageReceived = messages.filter(messaggio=>messaggio.status === 'received')
+    // console.log(messageReceived);
+
+    if (messageReceived.length > 0) {
+      return messageReceived[messageReceived.length - 1]?.date.slice(10)
+    } else {
+      return ''
+    }
   }
 
 }

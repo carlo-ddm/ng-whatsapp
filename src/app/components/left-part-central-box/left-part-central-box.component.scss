@@ -72,8 +72,7 @@
     padding: 10px;
     width: 100%;
     height: calc(100%);
-    border-bottom: 1px solid #f3eeea;;
-    background-color: white;
+    border-bottom: 1px solid #f3eeea;
     img {
       width: 50px;
       margin-right: 5px;
@@ -93,6 +92,9 @@
   }
 }
 
+.active {
+  background-color: #E5E5E5;
+}
 
 
 

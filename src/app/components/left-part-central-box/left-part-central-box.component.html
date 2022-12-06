@@ -32,7 +32,7 @@
 
   <div (click)="emitProfile(i)" *ngFor="let profile of data, index as i">
 
-    <div [appSelect]="i" class="profile d-flex justify-content-between align-items-center" *ngIf="profile.visible">
+    <div (click)="select(i)" [ngClass]="i == selectedIndex ? 'active' : ''" class="profile d-flex justify-content-between align-items-center" *ngIf="profile.visible">
 
       <div class="d-flex align-items-center">
         <img [src]="'../../../assets/img/avatar' + profile.avatar + '.jpeg'">

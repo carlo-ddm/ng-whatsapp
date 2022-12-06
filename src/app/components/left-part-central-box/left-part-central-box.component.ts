@@ -18,6 +18,8 @@ export class LeftPartCentralBoxComponent{
     avatar: '_2'
   }
 
+  selectedIndex = 0;
+
   serachProfiles:string = ''
 
   getHours(messages: Message[]): string{
@@ -44,6 +46,12 @@ export class LeftPartCentralBoxComponent{
 
   emitProfile(index:number){
     this.emitSelectedProfile.emit(index)
+  }
+
+  select(index:number){
+    this.selectedIndex = index
+    console.log(this.selectedIndex);
+
   }
 
 }
