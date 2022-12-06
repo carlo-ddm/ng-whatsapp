@@ -8,6 +8,7 @@ import { Message, Profile } from 'src/app/interface/profile.interface';
 })
 export class LeftPartCentralBoxComponent{
 
+
   @Input() data: Profile [] = []
 
   @Output() emitSelectedProfile = new EventEmitter<number>()

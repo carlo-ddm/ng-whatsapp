@@ -33,7 +33,15 @@
   </div>
 </div>
 
+<!-- CHAT -->
 <div class="chat">
+
+  <div class="right-message">
+    <div *ngFor="let msg of data?.messages" class="`message sent`">
+      <div class="message-text">{{msg.message}}</div>
+      <div class="message-time">{{msg.date}}</div>
+    </div>
+  </div>
 
 </div>
 

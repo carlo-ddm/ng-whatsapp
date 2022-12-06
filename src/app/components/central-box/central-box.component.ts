@@ -1,5 +1,5 @@
 // import { getLocaleDateFormat } from '@angular/common';
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Profile } from 'src/app/interface/profile.interface';
 
 @Component({
@@ -7,7 +7,10 @@ import { Profile } from 'src/app/interface/profile.interface';
   templateUrl: './central-box.component.html',
   styleUrls: ['./central-box.component.scss']
 })
-export class CentralBoxComponent{
+export class CentralBoxComponent implements OnInit{
+  ngOnInit(): void {
+    this.selectedProfile = this.data[0];
+  }
 
   @Input() data: Profile [] = [];
   selectedProfile!:Profile;
