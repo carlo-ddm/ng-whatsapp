@@ -7,6 +7,7 @@ import { CentralBoxComponent } from "./components/central-box/central-box.compon
 import { LeftPartCentralBoxComponent } from './components/left-part-central-box/left-part-central-box.component';
 import { RightPartCentralBoxComponent } from './components/right-part-central-box/right-part-central-box.component';
 import { SelectDirective } from './directives/select.directive';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { SelectDirective } from './directives/select.directive';
     CentralBoxComponent,
     LeftPartCentralBoxComponent,
     RightPartCentralBoxComponent,
-    SelectDirective
+    SelectDirective,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

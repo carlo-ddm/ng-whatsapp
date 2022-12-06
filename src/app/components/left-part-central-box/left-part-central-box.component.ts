@@ -16,13 +16,14 @@ export class LeftPartCentralBoxComponent implements OnInit, OnChanges {
     avatar: '_2'
   }
 
-  index:number = 0;
+  serachProfiles:string = ''
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
   }
   ngOnChanges(changes: SimpleChanges): void {
     // console.log('Here', this.data);
+
   }
 
   getHours(messages: Message[]): string{
@@ -36,8 +37,21 @@ export class LeftPartCentralBoxComponent implements OnInit, OnChanges {
     }
   }
 
-  changeIndex(index:number){
-    // Funziona anche solo con c-log
-    this.index = index
+  // changeIndex(index:number){
+  //   // Funziona anche solo con c-log
+  //   this.index = index
+  // }
+
+  search(){
+    this.data.forEach(profile => {
+      if (profile.name.toLowerCase().includes(this.serachProfiles.toLowerCase()))
+      {
+          profile.visible = true;
+      } else {
+          profile.visible = false;
+      }
+  });
+  console.log(this.search);
   }
+
 }

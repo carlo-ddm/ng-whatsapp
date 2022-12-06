@@ -6,6 +6,7 @@ import { Directive, ElementRef, HostListener, Input, OnChanges, SimpleChanges } 
 export class SelectDirective {
 
   @Input() appSelect:any;
+  index:number = 0;
 
   constructor(private element:ElementRef) {
   }
@@ -16,8 +17,8 @@ export class SelectDirective {
 
 
   colorAtSelection(background:string){
-    this.element.nativeElement.style.backgroundColor = background
-    console.log('INDICE SELEZIONATO?',this.appSelect);
+    console.log('INDICE: ',this.appSelect);
+    this.element.nativeElement.style.backgroundColor = background;
   }
 
 }

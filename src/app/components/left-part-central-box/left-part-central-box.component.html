@@ -22,24 +22,32 @@
   </div>
 </div>
 
+<!-- SEARCH PROFILES -->
 <div class="search-start-new-chat">
-  <input type="text" placeholder="Cerca o inizia una nuova chat">
+  <input type="text" placeholder="Cerca o inizia una nuova chat" [(ngModel)]="serachProfiles" (keyup)="search()">
 </div>
 
-<div class="profiles d-flex flex-column">
-  <div [appSelect]="i" (click)="changeIndex(i)" class="profile d-flex justify-content-between align-items-center" *ngFor="let profile of data, index as i">
-    <div class="d-flex align-items-center">
-      <img [src]="'../../../assets/img/avatar' + profile.avatar + '.jpeg'">
-      <!-- Container -> Nome + Ultimo messaggio ricevuto -->
-      <div class="d-flex flex-column">
-        <span>{{profile.name}}</span>
-        <span class="last-received">Ultimo messaggio ricevuto</span>
+
+<div class="profiles d-flex flex-column" >
+
+  <div  *ngFor="let profile of data, index as i">
+
+    <div [appSelect]="i" class="profile d-flex justify-content-between align-items-center" *ngIf="profile.visible">
+
+      <div class="d-flex align-items-center">
+        <img [src]="'../../../assets/img/avatar' + profile.avatar + '.jpeg'">
+        <!-- Container -> Nome + Ultimo messaggio ricevuto -->
+        <div class="d-flex flex-column">
+          <span>{{profile.name}}</span>
+          <span class="last-received">Ultimo messaggio ricevuto</span>
+        </div>
+      </div>
+
+      <div class="hour-last-msg-received">
+        <span>{{getHours(profile.messages)}}</span>
       </div>
     </div>
 
-    <div class="hour-last-msg-received">
-      <span>{{getHours(profile.messages)}}</span>
-    </div>
 
   </div>
 </div>
