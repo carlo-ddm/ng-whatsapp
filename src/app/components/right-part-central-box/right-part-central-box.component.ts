@@ -18,9 +18,6 @@ export class RightPartCentralBoxComponent implements OnInit, OnChanges{
 
   lastAccess = this.getNewMessageDate()
 
-
-
-
   getNewMessageDate():string{
     const data = new Date();
     const gg = data.getDate();
@@ -32,13 +29,11 @@ export class RightPartCentralBoxComponent implements OnInit, OnChanges{
     const sec = data.getSeconds()
 
     if (sec >= 0 && sec <= 9) {
-
       return gg + '/' + mm + '/' + yy + ' ' + hh + ':' + min + ':' + '0' +  sec
     } else {
       return gg + '/' + mm + '/' + yy + ' ' + hh + ':' + min + ':' +  sec
     }
   }
-
 
   ngOnInit(): void {
     // console.log('data: ',this.data?.messages);
@@ -60,10 +55,6 @@ export class RightPartCentralBoxComponent implements OnInit, OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(this.newMessage);
   }
-
-
-
-
 
   // Orario dell'ultimo messaggio dell'interlocutore
   getHours(messages: Message[]): string{
