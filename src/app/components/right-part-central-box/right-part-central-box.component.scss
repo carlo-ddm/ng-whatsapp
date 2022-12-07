@@ -54,6 +54,7 @@
   input {
     width: calc(100% - 20%);
     height: 100%;
+    padding-left: 10px;
     font-size: 11px;
     border: none;
     border-radius: 4px;
@@ -72,6 +73,16 @@
     max-width: 60%;
     border-radius: 10px;
     padding: 20px;
+    p {
+      font-size: 14px;
+    }
+    .hour-last-msg-received {
+      position: absolute;
+      right: 10px;
+      height: 100%;
+      font-size: 8px;
+      color: #b1b1b1;
+    }
   }
   .sent {
     background-color: #D5F9BA;
@@ -83,13 +94,6 @@
     float: left;
   }
 
-  .hour-last-msg-received {
-    position: absolute;
-    right: 10px;
-    height: 100%;
-    font-size: 10px;
-    color: #b1b1b1;
-  }
 
 }
 

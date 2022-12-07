@@ -52,7 +52,7 @@
   <div class="smile d-flex justify-content-center align-items-center">
     <i class="fa-regular fa-face-smile"></i>
   </div>
-  <input type="text" placeholder="Scrivi un messaggio">
+  <input [(ngModel)]="newMessage" (keyup.enter)="newMessageCreator()" type="text" placeholder="Scrivi un messaggio">
   <div class="mic d-flex justify-content-center align-items-center">
     <i class="fa-solid fa-microphone"></i>
   </div>

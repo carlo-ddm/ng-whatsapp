@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Data } from '@angular/router';
 import { Message, Profile } from 'src/app/interface/profile.interface';
 
 @Component({
@@ -6,17 +7,39 @@ import { Message, Profile } from 'src/app/interface/profile.interface';
   templateUrl: './right-part-central-box.component.html',
   styleUrls: ['./right-part-central-box.component.scss']
 })
-export class RightPartCentralBoxComponent implements OnInit{
-
-  ngOnInit(): void {
-    console.log('data: ',this.data?.messages);
-
-  }
+export class RightPartCentralBoxComponent implements OnInit, OnChanges{
 
   @Input() data:Profile | null | undefined;
 
+  newMessage:string = '';
 
-  // ORARIO DI ULTIMO ACCESSO DELL'INTERLOCUTORE *************************
+  newMesssageDate = this.getNewMessageDate();
+
+
+  getNewMessageDate():string{
+    const data = new Date();
+    const gg = data.getDate();
+    const mm = data.getMonth();
+    const yy = data.getFullYear();
+
+    const hh = data.getHours();
+    const min = data.getMinutes();
+    const sec = data.getSeconds()
+    return gg + '/' + mm + '/' + yy + ' ' + hh + ':' + min + ':' + sec
+  }
+
+
+  ngOnInit(): void {
+    // console.log('data: ',this.data?.messages);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log(this.newMessage);
+  }
+
+
+
+  // Orario dell'ultimo messaggio dell'interlocutore
   getHours(messages: Message[]): string{
     let messageReceived = messages.filter(messaggio=>messaggio.status === 'sent')
     // console.log(messageReceived);
@@ -28,4 +51,26 @@ export class RightPartCentralBoxComponent implements OnInit{
     }
   }
 
+  newMessageCreator(){
+    if (this.newMessage.length > 1) {
+      this.data?.messages.push(
+        {
+          date: this.newMesssageDate,
+          message: this.newMessage,
+          status: 'sent'
+        }
+      )
+      this.newMessage = '';
+    //   setTimeout(() => {
+    //     this.data?.messages.push(
+    //         {
+    //             data: this.newMesssageDate,
+    //             message: 'Ok!',
+    //             status: 'received'
+    //         }
+    //     )
+
+    // }, 1000)
+    }
+  }
 }
