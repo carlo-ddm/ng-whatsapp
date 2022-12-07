@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Data } from '@angular/router';
+import { timer } from 'rxjs';
 import { Message, Profile } from 'src/app/interface/profile.interface';
 
 @Component({
@@ -15,6 +16,10 @@ export class RightPartCentralBoxComponent implements OnInit, OnChanges{
 
   newMesssageDate = this.getNewMessageDate();
 
+  lastAccess = this.getNewMessageDate()
+
+
+
 
   getNewMessageDate():string{
     const data = new Date();
@@ -25,17 +30,38 @@ export class RightPartCentralBoxComponent implements OnInit, OnChanges{
     const hh = data.getHours();
     const min = data.getMinutes();
     const sec = data.getSeconds()
-    return gg + '/' + mm + '/' + yy + ' ' + hh + ':' + min + ':' + sec
+
+    if (sec >= 0 && sec <= 9) {
+
+      return gg + '/' + mm + '/' + yy + ' ' + hh + ':' + min + ':' + '0' +  sec
+    } else {
+      return gg + '/' + mm + '/' + yy + ' ' + hh + ':' + min + ':' +  sec
+    }
   }
 
 
   ngOnInit(): void {
     // console.log('data: ',this.data?.messages);
+
+    setInterval(()=>{
+      this.timer(this.getNewMessageDate())
+    }, 1000)
+  }
+
+   timer(lastAccess:string) {
+    console.log(lastAccess);
+
+    setTimeout(()=> {
+      lastAccess
+    }, 1000)
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(this.newMessage);
   }
+
+
 
 
 
@@ -61,16 +87,22 @@ export class RightPartCentralBoxComponent implements OnInit, OnChanges{
         }
       )
       this.newMessage = '';
-    //   setTimeout(() => {
-    //     this.data?.messages.push(
-    //         {
-    //             data: this.newMesssageDate,
-    //             message: 'Ok!',
-    //             status: 'received'
-    //         }
-    //     )
-
-    // }, 1000)
+      setTimeout(() => {
+        this.data?.messages.push(
+            {
+                date: this.newMesssageDate,
+                message: 'Messaggio ricevuto!',
+                status: 'received'
+            }
+        )
+    }, 3000)
     }
   }
+
+
+
+
+
+
+
 }
