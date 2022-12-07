@@ -34,14 +34,17 @@
 </div>
 
 <!-- CHAT -->
-<div class="chat">
+<div class="chat d-flex flex-column">
 
-  <div class="right-message">
-    <div *ngFor="let msg of data?.messages" class="`message sent`">
-      <div class="message-text">{{msg.message}}</div>
-      <div class="message-time">{{msg.date}}</div>
+  <div *ngFor="let msg of data?.messages">
+    <div class="message" [class]="msg.status">
+      <p class="m-0">{{msg.message}}</p>
+
+        <span class="hour-last-msg-received">{{getHours(data!.messages)}}</span>
+
     </div>
   </div>
+
 
 </div>
 
